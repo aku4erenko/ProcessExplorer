@@ -12,6 +12,8 @@
 		78089D78248275DB004D7C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78089D77248275DB004D7C42 /* Assets.xcassets */; };
 		78089D7B248275DB004D7C42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78089D79248275DB004D7C42 /* Main.storyboard */; };
 		78089D87248275DB004D7C42 /* ProcessExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D86248275DB004D7C42 /* ProcessExplorerTests.swift */; };
+		78089D9324827AF3004D7C42 /* libbsm.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78089D9224827AF3004D7C42 /* libbsm.tbd */; };
+		78089D9624828CD9004D7C42 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D9524828CD9004D7C42 /* Process.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,9 @@
 		78089D82248275DB004D7C42 /* ProcessExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProcessExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78089D86248275DB004D7C42 /* ProcessExplorerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessExplorerTests.swift; sourceTree = "<group>"; };
 		78089D88248275DB004D7C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78089D9224827AF3004D7C42 /* libbsm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbsm.tbd; path = usr/lib/libbsm.tbd; sourceTree = SDKROOT; };
+		78089D9524828CD9004D7C42 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
+		78089D9724829F7C004D7C42 /* ProcessExplorer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProcessExplorer-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78089D9324827AF3004D7C42 /* libbsm.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +67,7 @@
 				78089D72248275D9004D7C42 /* ProcessExplorer */,
 				78089D85248275DB004D7C42 /* ProcessExplorerTests */,
 				78089D71248275D9004D7C42 /* Products */,
+				78089D9124827AF2004D7C42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,12 +83,14 @@
 		78089D72248275D9004D7C42 /* ProcessExplorer */ = {
 			isa = PBXGroup;
 			children = (
+				78089D9424828CBD004D7C42 /* ProcessMonitor */,
 				78089D73248275D9004D7C42 /* AppDelegate.swift */,
 				78089D75248275D9004D7C42 /* ViewController.swift */,
 				78089D77248275DB004D7C42 /* Assets.xcassets */,
 				78089D79248275DB004D7C42 /* Main.storyboard */,
 				78089D7C248275DB004D7C42 /* Info.plist */,
 				78089D7D248275DB004D7C42 /* ProcessExplorer.entitlements */,
+				78089D9724829F7C004D7C42 /* ProcessExplorer-Bridging-Header.h */,
 			);
 			path = ProcessExplorer;
 			sourceTree = "<group>";
@@ -93,6 +102,22 @@
 				78089D88248275DB004D7C42 /* Info.plist */,
 			);
 			path = ProcessExplorerTests;
+			sourceTree = "<group>";
+		};
+		78089D9124827AF2004D7C42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78089D9224827AF3004D7C42 /* libbsm.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78089D9424828CBD004D7C42 /* ProcessMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				78089D9524828CD9004D7C42 /* Process.swift */,
+			);
+			path = ProcessMonitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +170,7 @@
 				TargetAttributes = {
 					78089D6F248275D9004D7C42 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 					78089D81248275DB004D7C42 = {
 						CreatedOnToolsVersion = 11.5;
@@ -196,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78089D76248275D9004D7C42 /* ViewController.swift in Sources */,
+				78089D9624828CD9004D7C42 /* Process.swift in Sources */,
 				78089D74248275D9004D7C42 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ProcessExplorer/ProcessExplorer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -361,6 +389,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = akucherenko.ProcessExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProcessExplorer/ProcessExplorer-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -369,6 +399,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ProcessExplorer/ProcessExplorer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -381,6 +412,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = akucherenko.ProcessExplorer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ProcessExplorer/ProcessExplorer-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
