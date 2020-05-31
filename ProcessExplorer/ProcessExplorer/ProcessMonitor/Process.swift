@@ -25,6 +25,8 @@ public class Process: NSObject {
 	/// A path to process' binary
 	@objc let path: String
 	
+	@objc let bundleID: String
+	
 	init(pid: pid_t) {
 		self.pid = pid
 		
@@ -52,5 +54,26 @@ public class Process: NSObject {
 		} else {
 			self.path = ""
 		}
+		
+		// Check bundle
+		if !self.path.isEmpty, let bundle = FindBundleForExecutable(atPath: path){
+			self.bundleID = bundle.bundleIdentifier ?? ""
+		} else {
+			self.bundleID = ""
+		}
 	}
+}
+
+fileprivate func FindBundleForExecutable(atPath path: String) -> Bundle? {
+	var bundlePath = path
+
+	repeat {
+		if let currentBundle = Bundle(path: bundlePath), currentBundle.executablePath == path {
+			return currentBundle
+		} else {
+			bundlePath = (bundlePath as NSString).deletingLastPathComponent
+		}
+	} while !bundlePath.isEmpty && bundlePath != "/"
+	
+	return nil
 }

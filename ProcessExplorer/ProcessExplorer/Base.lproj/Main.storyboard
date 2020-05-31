@@ -722,7 +722,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="16V-3m-d2L">
                                 <rect key="frame" x="18" y="3" width="414" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="Fam-DP-F4r">
-                                    <font key="font" metaFont="label" size="11"/>
+                                    <font key="font" metaFont="toolTip"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -1057,6 +1057,13 @@
                                                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                             </textFieldCell>
+                                                            <connections>
+                                                                <binding destination="JfV-4V-o7M" name="value" keyPath="representedObject.bundleID" id="01e-BH-SMw">
+                                                                    <dictionary key="options">
+                                                                        <string key="NSNullPlaceholder">-</string>
+                                                                    </dictionary>
+                                                                </binding>
+                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                     <visibilityPriorities>
