@@ -17,6 +17,7 @@
 		78089D9C2482A296004D7C42 /* ProcessMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D9B2482A296004D7C42 /* ProcessMonitor.swift */; };
 		78089DA22483AAE0004D7C42 /* ProcessesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */; };
 		78089DA42483AB3B004D7C42 /* ProcessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */; };
+		78DADB9B2483C4B0000FA6CF /* ProcessSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DADB9A2483C4B0000FA6CF /* ProcessSplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		78089D9B2482A296004D7C42 /* ProcessMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessMonitor.swift; sourceTree = "<group>"; };
 		78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessesViewController.swift; sourceTree = "<group>"; };
 		78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessDetailsViewController.swift; sourceTree = "<group>"; };
+		78DADB9A2483C4B0000FA6CF /* ProcessSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessSplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				78089D9424828CBD004D7C42 /* ProcessMonitor */,
 				78089D73248275D9004D7C42 /* AppDelegate.swift */,
 				78089D75248275D9004D7C42 /* MainViewController.swift */,
+				78DADB9A2483C4B0000FA6CF /* ProcessSplitViewController.swift */,
 				78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */,
 				78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */,
 				78089D77248275DB004D7C42 /* Assets.xcassets */,
@@ -231,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78089D76248275D9004D7C42 /* MainViewController.swift in Sources */,
+				78DADB9B2483C4B0000FA6CF /* ProcessSplitViewController.swift in Sources */,
 				78089D9624828CD9004D7C42 /* Process.swift in Sources */,
 				78089DA22483AAE0004D7C42 /* ProcessesViewController.swift in Sources */,
 				78089DA42483AB3B004D7C42 /* ProcessDetailsViewController.swift in Sources */,

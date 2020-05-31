@@ -22,6 +22,16 @@ class MainViewController: NSViewController {
 		}
 	}
 
+	override func prepare(for segue: NSStoryboardSegue, sender: Any?) {
+		guard let splitViewController = segue.destinationController as? ProcessSplitViewController else { return }
+		splitViewController.delegate = self
+	}
+}
 
+//MARK: -
+extension MainViewController: ProcessSplitViewControllerDelegate {
+	func proccessSplitViewController(_ controller: ProcessSplitViewController, didUpdatedCountOfProcesses count: Int) {
+		// TODO: Update UI with count
+	}
 }
 

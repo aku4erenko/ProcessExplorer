@@ -713,7 +713,7 @@
                             <containerView translatesAutoresizingMaskIntoConstraints="NO" id="ykf-dw-xKx">
                                 <rect key="frame" x="0.0" y="20" width="450" height="280"/>
                                 <connections>
-                                    <segue destination="DKM-Vn-syy" kind="embed" id="fG7-fz-WHM"/>
+                                    <segue destination="DKM-Vn-syy" kind="embed" identifier="embedSplitView" id="fG7-fz-WHM"/>
                                 </connections>
                             </containerView>
                             <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="9RL-2D-gVq">
@@ -747,10 +747,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="688"/>
         </scene>
-        <!--Split View Controller-->
+        <!--Process Split View Controller-->
         <scene sceneID="tSO-vY-XnO">
             <objects>
-                <splitViewController id="DKM-Vn-syy" sceneMemberID="viewController">
+                <splitViewController id="DKM-Vn-syy" customClass="ProcessSplitViewController" customModule="ProcessExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem id="OZe-oQ-gg6"/>
                         <splitViewItem id="o1h-l4-32D"/>
@@ -764,7 +764,7 @@
                     </splitView>
                     <connections>
                         <outlet property="splitView" destination="Qj6-DC-LoP" id="06u-qR-Gqo"/>
-                        <segue destination="8Xr-8J-psp" kind="relationship" relationship="splitItems" id="dA7-pl-2gB"/>
+                        <segue destination="8Xr-8J-psp" kind="relationship" relationship="splitItems" destinationCreationSelector="de" id="dA7-pl-2gB"/>
                         <segue destination="JfV-4V-o7M" kind="relationship" relationship="splitItems" id="PEk-bj-NyE"/>
                     </connections>
                 </splitViewController>
@@ -881,9 +881,10 @@
                     </view>
                 </viewController>
                 <customObject id="k2m-wl-q0c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <arrayController objectClassName="Process" editable="NO" id="i7h-O7-OAf">
+                <arrayController objectClassName="Process" editable="NO" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="i7h-O7-OAf">
                     <connections>
                         <binding destination="8Xr-8J-psp" name="contentArray" keyPath="processes" id="3eK-sx-f5K"/>
+                        <binding destination="8Xr-8J-psp" name="selectionIndexes" keyPath="selectionIndexes" id="De0-RE-ZFd"/>
                     </connections>
                 </arrayController>
             </objects>
@@ -894,14 +895,14 @@
             <objects>
                 <viewController id="JfV-4V-o7M" customClass="ProcessDetailsViewController" customModule="ProcessExplorer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="M19-re-rMZ">
-                        <rect key="frame" x="0.0" y="0.0" width="224" height="206"/>
+                        <rect key="frame" x="0.0" y="0.0" width="224" height="207"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fwz-2i-dGx">
-                                <rect key="frame" x="10" y="10" width="204" height="176"/>
+                                <rect key="frame" x="10" y="10" width="204" height="177"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="trailing" horizontalStackHuggingPriority="1000" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pm-PS-ZRa">
-                                        <rect key="frame" x="0.0" y="112" width="43" height="64"/>
+                                        <rect key="frame" x="0.0" y="113" width="43" height="64"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="uca-2O-Oy9">
                                                 <rect key="frame" x="-2" y="48" width="47" height="16"/>
@@ -940,27 +941,27 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hbA-7f-mwb">
-                                        <rect key="frame" x="51" y="112" width="153" height="64"/>
+                                        <rect key="frame" x="51" y="113" width="153" height="64"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oDO-YN-tLY">
-                                                <rect key="frame" x="-2" y="48" width="53" height="16"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;value&gt;" id="dYr-pO-exl">
+                                                <rect key="frame" x="-2" y="48" width="11" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="-" id="dYr-pO-exl">
                                                     <font key="font" usesAppearanceFont="YES"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PvT-fE-zuo">
-                                                <rect key="frame" x="-2" y="24" width="53" height="16"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;value&gt;" id="EoC-jV-lL3">
+                                                <rect key="frame" x="-2" y="24" width="11" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="-" id="EoC-jV-lL3">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZK3-bT-0IS">
-                                                <rect key="frame" x="-2" y="0.0" width="53" height="16"/>
-                                                <textFieldCell key="cell" lineBreakMode="clipping" title="&lt;value&gt;" id="G9u-0V-sdx">
+                                                <rect key="frame" x="-2" y="0.0" width="11" height="16"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" placeholderString="-" id="G9u-0V-sdx">
                                                     <font key="font" metaFont="system"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1001,10 +1002,15 @@
                             <constraint firstAttribute="bottom" secondItem="Fwz-2i-dGx" secondAttribute="bottom" constant="10" id="rDN-Ox-fh4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pathLabel" destination="ZK3-bT-0IS" id="r6b-MV-u7z"/>
+                        <outlet property="pidLabel" destination="oDO-YN-tLY" id="dh9-yS-IGE"/>
+                        <outlet property="uidLabel" destination="PvT-fE-zuo" id="iJE-L6-xrw"/>
+                    </connections>
                 </viewController>
                 <customObject id="eDg-sV-4ji" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="266" y="1604"/>
+            <point key="canvasLocation" x="266" y="1604.5"/>
         </scene>
     </scenes>
 </document>

@@ -10,10 +10,23 @@ import Cocoa
 
 class ProcessesViewController: NSViewController {
 	
+	//MARK: Properties
 	@objc var processes = [Process]()
+	@objc var selectionIndexes = IndexSet() {
+		didSet {
+			if let index = selectionIndexes.first {
+				delegate?.processesViewController(self, didSelecteProcess: processes[index])
+			} else {
+				delegate?.processesViewController(self, didSelecteProcess: nil)
+			}
+		}
+	}
+	
+	weak var delegate: ProcessesViewControllerDelegate?
 	
 	private let monitor = ProcessMonitor()
 	
+	//MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -30,6 +43,14 @@ class ProcessesViewController: NSViewController {
 			}
 			
 			self.didChangeValue(for: \.processes)
+			
+			self.delegate?.processesViewController(self, didUpdateCountOfProcesses: self.processes.count)
 		}
 	}
+}
+
+//MARK: -
+protocol ProcessesViewControllerDelegate: AnyObject {
+	func processesViewController(_ controller: ProcessesViewController, didUpdateCountOfProcesses count: Int)
+	func processesViewController(_ controller: ProcessesViewController, didSelecteProcess process: Process?)
 }
