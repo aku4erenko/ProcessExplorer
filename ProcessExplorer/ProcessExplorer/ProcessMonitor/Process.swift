@@ -20,7 +20,7 @@ public class Process {
 	let ppid: pid_t
 	
 	/// User identifier
-	let uid: uid_t?
+	let uid: uid_t
 	
 	/// A path to process' binary
 	let path: String
@@ -38,7 +38,7 @@ public class Process {
 			self.uid = processInfo.kp_eproc.e_ucred.cr_uid
 		} else {
 			self.ppid = -1
-			self.uid = nil
+			self.uid = 0
 		}
 		
 		// Process path
@@ -52,5 +52,21 @@ public class Process {
 		} else {
 			self.path = ""
 		}
+	}
+}
+
+extension Process: Hashable {
+	public static func == (lhs: Process, rhs: Process) -> Bool {
+		return lhs.pid == rhs.pid
+	}
+	
+	public func hash(into hasher: inout Hasher) {
+		hasher.combine(pid)
+	}
+}
+
+extension Process: CustomStringConvertible {
+	public var description: String {
+		"Process(pid: \(pid), ppid: \(ppid), uid: \(uid), path: \"\(path)\""
 	}
 }
