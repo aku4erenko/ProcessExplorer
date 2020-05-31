@@ -722,7 +722,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="16V-3m-d2L">
                                 <rect key="frame" x="18" y="3" width="414" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="Fam-DP-F4r">
-                                    <font key="font" metaFont="controlContent" size="11"/>
+                                    <font key="font" metaFont="menu" size="11"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -957,6 +957,13 @@
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <binding destination="JfV-4V-o7M" name="value" keyPath="representedObject.pid" id="ToU-99-Zrs">
+                                                        <dictionary key="options">
+                                                            <string key="NSNullPlaceholder">-</string>
+                                                        </dictionary>
+                                                    </binding>
+                                                </connections>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PvT-fE-zuo">
                                                 <rect key="frame" x="-2" y="24" width="11" height="16"/>
@@ -965,6 +972,13 @@
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <binding destination="JfV-4V-o7M" name="value" keyPath="representedObject.ppid" id="DCk-h0-ukA">
+                                                        <dictionary key="options">
+                                                            <string key="NSNullPlaceholder">-</string>
+                                                        </dictionary>
+                                                    </binding>
+                                                </connections>
                                             </textField>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ZK3-bT-0IS">
                                                 <rect key="frame" x="-2" y="0.0" width="11" height="16"/>
@@ -973,6 +987,13 @@
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </textFieldCell>
+                                                <connections>
+                                                    <binding destination="JfV-4V-o7M" name="value" keyPath="representedObject.path" id="amd-De-jOy">
+                                                        <dictionary key="options">
+                                                            <string key="NSNullPlaceholder">-</string>
+                                                        </dictionary>
+                                                    </binding>
+                                                </connections>
                                             </textField>
                                         </subviews>
                                         <visibilityPriorities>
@@ -1009,11 +1030,6 @@
                             <constraint firstAttribute="bottom" secondItem="Fwz-2i-dGx" secondAttribute="bottom" constant="10" id="rDN-Ox-fh4"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="pathLabel" destination="ZK3-bT-0IS" id="r6b-MV-u7z"/>
-                        <outlet property="pidLabel" destination="oDO-YN-tLY" id="dh9-yS-IGE"/>
-                        <outlet property="uidLabel" destination="PvT-fE-zuo" id="iJE-L6-xrw"/>
-                    </connections>
                 </viewController>
                 <customObject id="eDg-sV-4ji" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>

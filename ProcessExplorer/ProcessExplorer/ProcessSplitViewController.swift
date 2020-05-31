@@ -41,7 +41,7 @@ extension ProcessSplitViewController: ProcessesViewControllerDelegate {
 	}
 	
 	func processesViewController(_ controller: ProcessesViewController, didSelecteProcess process: Process?) {
-		detailsViewController?.process = process
+		detailsViewController?.representedObject = process
 	}
 }
 
