@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		78089D74248275D9004D7C42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D73248275D9004D7C42 /* AppDelegate.swift */; };
-		78089D76248275D9004D7C42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D75248275D9004D7C42 /* ViewController.swift */; };
+		78089D76248275D9004D7C42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D75248275D9004D7C42 /* MainViewController.swift */; };
 		78089D78248275DB004D7C42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78089D77248275DB004D7C42 /* Assets.xcassets */; };
 		78089D7B248275DB004D7C42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78089D79248275DB004D7C42 /* Main.storyboard */; };
 		78089D87248275DB004D7C42 /* ProcessExplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D86248275DB004D7C42 /* ProcessExplorerTests.swift */; };
 		78089D9324827AF3004D7C42 /* libbsm.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 78089D9224827AF3004D7C42 /* libbsm.tbd */; };
 		78089D9624828CD9004D7C42 /* Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D9524828CD9004D7C42 /* Process.swift */; };
 		78089D9C2482A296004D7C42 /* ProcessMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089D9B2482A296004D7C42 /* ProcessMonitor.swift */; };
+		78089DA22483AAE0004D7C42 /* ProcessesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */; };
+		78089DA42483AB3B004D7C42 /* ProcessDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,7 @@
 /* Begin PBXFileReference section */
 		78089D70248275D9004D7C42 /* ProcessExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProcessExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78089D73248275D9004D7C42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78089D75248275D9004D7C42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78089D75248275D9004D7C42 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		78089D77248275DB004D7C42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78089D7A248275DB004D7C42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78089D7C248275DB004D7C42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +44,8 @@
 		78089D9524828CD9004D7C42 /* Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Process.swift; sourceTree = "<group>"; };
 		78089D9724829F7C004D7C42 /* ProcessExplorer-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ProcessExplorer-Bridging-Header.h"; sourceTree = "<group>"; };
 		78089D9B2482A296004D7C42 /* ProcessMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessMonitor.swift; sourceTree = "<group>"; };
+		78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessesViewController.swift; sourceTree = "<group>"; };
+		78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,9 @@
 			children = (
 				78089D9424828CBD004D7C42 /* ProcessMonitor */,
 				78089D73248275D9004D7C42 /* AppDelegate.swift */,
-				78089D75248275D9004D7C42 /* ViewController.swift */,
+				78089D75248275D9004D7C42 /* MainViewController.swift */,
+				78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */,
+				78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */,
 				78089D77248275DB004D7C42 /* Assets.xcassets */,
 				78089D79248275DB004D7C42 /* Main.storyboard */,
 				78089D7C248275DB004D7C42 /* Info.plist */,
@@ -224,8 +230,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78089D76248275D9004D7C42 /* ViewController.swift in Sources */,
+				78089D76248275D9004D7C42 /* MainViewController.swift in Sources */,
 				78089D9624828CD9004D7C42 /* Process.swift in Sources */,
+				78089DA22483AAE0004D7C42 /* ProcessesViewController.swift in Sources */,
+				78089DA42483AB3B004D7C42 /* ProcessDetailsViewController.swift in Sources */,
 				78089D9C2482A296004D7C42 /* ProcessMonitor.swift in Sources */,
 				78089D74248275D9004D7C42 /* AppDelegate.swift in Sources */,
 			);
