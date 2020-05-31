@@ -20,6 +20,7 @@
 		78DADB9B2483C4B0000FA6CF /* ProcessSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DADB9A2483C4B0000FA6CF /* ProcessSplitViewController.swift */; };
 		78DADBA02483E8A7000FA6CF /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 78DADB9F2483E8A7000FA6CF /* Localizable.stringsdict */; };
 		78DADBA32483EBAE000FA6CF /* ProcessCountTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DADBA22483EBAE000FA6CF /* ProcessCountTransformer.swift */; };
+		78DADBA5248417D1000FA6CF /* FlippedClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DADBA4248417D1000FA6CF /* FlippedClipView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		78DADB9A2483C4B0000FA6CF /* ProcessSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessSplitViewController.swift; sourceTree = "<group>"; };
 		78DADB9F2483E8A7000FA6CF /* Localizable.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Localizable.stringsdict; sourceTree = "<group>"; };
 		78DADBA22483EBAE000FA6CF /* ProcessCountTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessCountTransformer.swift; sourceTree = "<group>"; };
+		78DADBA4248417D1000FA6CF /* FlippedClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippedClipView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */,
 				78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */,
 				78DADBA12483EB84000FA6CF /* Transformers */,
+				78DADBA624841875000FA6CF /* Misc */,
 				78089D77248275DB004D7C42 /* Assets.xcassets */,
 				78089D79248275DB004D7C42 /* Main.storyboard */,
 				78089D7C248275DB004D7C42 /* Info.plist */,
@@ -144,6 +147,14 @@
 				78DADBA22483EBAE000FA6CF /* ProcessCountTransformer.swift */,
 			);
 			path = Transformers;
+			sourceTree = "<group>";
+		};
+		78DADBA624841875000FA6CF /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				78DADBA4248417D1000FA6CF /* FlippedClipView.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +264,7 @@
 				78DADBA32483EBAE000FA6CF /* ProcessCountTransformer.swift in Sources */,
 				78089D9624828CD9004D7C42 /* Process.swift in Sources */,
 				78089DA22483AAE0004D7C42 /* ProcessesViewController.swift in Sources */,
+				78DADBA5248417D1000FA6CF /* FlippedClipView.swift in Sources */,
 				78089DA42483AB3B004D7C42 /* ProcessDetailsViewController.swift in Sources */,
 				78089D9C2482A296004D7C42 /* ProcessMonitor.swift in Sources */,
 				78089D74248275D9004D7C42 /* AppDelegate.swift in Sources */,
