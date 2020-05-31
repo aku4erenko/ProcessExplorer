@@ -14,15 +14,12 @@ class ProcessesViewController: NSViewController {
 	@objc var processes = [Process]()
 	@objc var selectionIndexes = IndexSet() {
 		didSet {
-			if let index = selectionIndexes.first {
-				delegate?.processesViewController(self, didSelecteProcess: processes[index])
-			} else {
-				delegate?.processesViewController(self, didSelecteProcess: nil)
-			}
+			delegate?.processesViewController(self, didSelecteProcess: arrayController?.selectedObjects.first as? Process)
 		}
 	}
 	
 	weak var delegate: ProcessesViewControllerDelegate?
+	@IBOutlet weak var arrayController: NSArrayController?
 	
 	private let monitor = ProcessMonitor()
 	

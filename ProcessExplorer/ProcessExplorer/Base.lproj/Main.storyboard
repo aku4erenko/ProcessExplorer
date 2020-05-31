@@ -722,7 +722,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="16V-3m-d2L">
                                 <rect key="frame" x="18" y="3" width="414" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" id="Fam-DP-F4r">
-                                    <font key="font" metaFont="menu" size="11"/>
+                                    <font key="font" metaFont="controlContent" size="11"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -886,6 +886,9 @@
                             <constraint firstAttribute="bottom" secondItem="Hx9-mi-mUW" secondAttribute="bottom" id="nZT-A6-qEo"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arrayController" destination="i7h-O7-OAf" id="3EV-Pb-8KM"/>
+                    </connections>
                 </viewController>
                 <customObject id="k2m-wl-q0c" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <arrayController objectClassName="Process" editable="NO" avoidsEmptySelection="NO" automaticallyRearrangesObjects="YES" id="i7h-O7-OAf">
