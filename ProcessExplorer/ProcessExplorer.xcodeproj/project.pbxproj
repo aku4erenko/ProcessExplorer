@@ -99,10 +99,7 @@
 			children = (
 				78089D9424828CBD004D7C42 /* ProcessMonitor */,
 				78089D73248275D9004D7C42 /* AppDelegate.swift */,
-				78089D75248275D9004D7C42 /* MainViewController.swift */,
-				78DADB9A2483C4B0000FA6CF /* ProcessSplitViewController.swift */,
-				78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */,
-				78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */,
+				78C77ADB248436EC006EBA47 /* ViewControllers */,
 				78DADBA12483EB84000FA6CF /* Transformers */,
 				78DADBA624841875000FA6CF /* Misc */,
 				78089D77248275DB004D7C42 /* Assets.xcassets */,
@@ -139,6 +136,17 @@
 				78089D9B2482A296004D7C42 /* ProcessMonitor.swift */,
 			);
 			path = ProcessMonitor;
+			sourceTree = "<group>";
+		};
+		78C77ADB248436EC006EBA47 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				78089D75248275D9004D7C42 /* MainViewController.swift */,
+				78DADB9A2483C4B0000FA6CF /* ProcessSplitViewController.swift */,
+				78089DA12483AAE0004D7C42 /* ProcessesViewController.swift */,
+				78089DA32483AB3A004D7C42 /* ProcessDetailsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		78DADBA12483EB84000FA6CF /* Transformers */ = {
