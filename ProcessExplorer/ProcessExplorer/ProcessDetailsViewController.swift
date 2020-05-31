@@ -9,5 +9,11 @@
 import Cocoa
 
 class ProcessDetailsViewController: NSViewController {
+	@IBAction func killProcess(_ sender: Any) {
+		guard let process = representedObject as? Process else { return }
+		
+		// TODO: Authorise operartion, SFAuthorization
+		 kill(process.pid, SIGKILL)
+	}
 }
 
