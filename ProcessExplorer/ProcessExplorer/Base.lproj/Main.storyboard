@@ -721,11 +721,18 @@
                             </box>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="16V-3m-d2L">
                                 <rect key="frame" x="18" y="3" width="414" height="14"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" title="There are N process" id="Fam-DP-F4r">
+                                <textFieldCell key="cell" lineBreakMode="clipping" id="Fam-DP-F4r">
                                     <font key="font" metaFont="controlContent" size="11"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <binding destination="9l1-vM-aRk" name="value" keyPath="countOfProcesses" id="f9H-48-so7">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">ProcessCountTransformer</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
                             </textField>
                         </subviews>
                         <constraints>
@@ -764,7 +771,7 @@
                     </splitView>
                     <connections>
                         <outlet property="splitView" destination="Qj6-DC-LoP" id="06u-qR-Gqo"/>
-                        <segue destination="8Xr-8J-psp" kind="relationship" relationship="splitItems" destinationCreationSelector="de" id="dA7-pl-2gB"/>
+                        <segue destination="8Xr-8J-psp" kind="relationship" relationship="splitItems" id="dA7-pl-2gB"/>
                         <segue destination="JfV-4V-o7M" kind="relationship" relationship="splitItems" id="PEk-bj-NyE"/>
                     </connections>
                 </splitViewController>

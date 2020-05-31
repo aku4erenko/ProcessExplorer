@@ -11,7 +11,13 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
+	override init() {
+		super.init()
+		
+		// Register value transformer
+		let transformer = ProcessCountTransformer()
+		ValueTransformer.setValueTransformer(transformer, forName: NSValueTransformerName("ProcessCountTransformer"))
+	}
 
 	func applicationDidFinishLaunching(_ aNotification: Notification) {
 		// Insert code here to initialize your application

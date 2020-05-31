@@ -9,7 +9,10 @@
 import Cocoa
 
 class MainViewController: NSViewController {
-
+	//MARK: Properties
+	@objc dynamic var countOfProcesses: Int = 1
+	
+	//MARK: - Lifecycle
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -31,7 +34,7 @@ class MainViewController: NSViewController {
 //MARK: -
 extension MainViewController: ProcessSplitViewControllerDelegate {
 	func proccessSplitViewController(_ controller: ProcessSplitViewController, didUpdatedCountOfProcesses count: Int) {
-		// TODO: Update UI with count
+		countOfProcesses = count
 	}
 }
 

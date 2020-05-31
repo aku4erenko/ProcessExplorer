@@ -22,6 +22,8 @@ class ProcessSplitViewController: NSSplitViewController {
 			switch itemViewController {
 			case let controller as ProcessesViewController:
 				controller.delegate = self
+				// Update count of active processes
+				delegate?.proccessSplitViewController(self, didUpdatedCountOfProcesses: controller.processes.count)
 			case let controller as ProcessDetailsViewController:
 				detailsViewController = controller
 				
