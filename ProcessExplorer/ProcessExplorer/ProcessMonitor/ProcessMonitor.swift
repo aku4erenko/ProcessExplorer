@@ -11,7 +11,7 @@ import Cocoa
 /// A service interface to track active processes or terminated ones.
 final public class ProcessMonitor: NSObject {
 	public enum Event {
-		case launch(Set<Process>)
+		case launch([Process])
 		case terminate(Set<pid_t>)
 	}
 	public typealias EventHandler = (Event) -> ()
@@ -50,10 +50,10 @@ final public class ProcessMonitor: NSObject {
 		let resolvedPIDs = resolveActivePIDs()
 		
 		do { // Determine launched (new) processes
-			var launchedProcesses = Set<Process>()
+			var launchedProcesses = [Process]()
 			let launchedPIDS = resolvedPIDs.subtracting(activePIDs)
 			for pid in launchedPIDS {
-				launchedProcesses.insert(Process(pid: pid))
+				launchedProcesses.append(Process(pid: pid))
 			}
 			
 			if !launchedProcesses.isEmpty {

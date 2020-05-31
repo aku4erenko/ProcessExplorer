@@ -11,19 +11,19 @@ import Darwin
 
 
 /// A model interface representing a process
-public class Process {
+public class Process: NSObject {
 	
 	/// Process identifier
-	let pid: pid_t
+	@objc let pid: pid_t
 	
 	/// Parent process identifier
-	let ppid: pid_t
+	@objc let ppid: pid_t
 	
 	/// User identifier
-	let uid: uid_t
+	@objc let uid: uid_t
 	
 	/// A path to process' binary
-	let path: String
+	@objc let path: String
 	
 	init(pid: pid_t) {
 		self.pid = pid
@@ -52,21 +52,5 @@ public class Process {
 		} else {
 			self.path = ""
 		}
-	}
-}
-
-extension Process: Hashable {
-	public static func == (lhs: Process, rhs: Process) -> Bool {
-		return lhs.pid == rhs.pid
-	}
-	
-	public func hash(into hasher: inout Hasher) {
-		hasher.combine(pid)
-	}
-}
-
-extension Process: CustomStringConvertible {
-	public var description: String {
-		"Process(pid: \(pid), ppid: \(ppid), uid: \(uid), path: \"\(path)\""
 	}
 }
